@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16B3BB7B18A2ABC5007FB8B6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B3BB7A18A2ABC5007FB8B6 /* main.cpp */; };
+		160D44EB18AF6FFC00857B59 /* DoubleRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 160D44E918AF6FFC00857B59 /* DoubleRef.cpp */; };
 		16B3BB7D18A2ABC5007FB8B6 /* projetInfo_AFMC.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16B3BB7C18A2ABC5007FB8B6 /* projetInfo_AFMC.1 */; };
+		16B3BB8518A2ABF7007FB8B6 /* MatrixImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B3BB8318A2ABF7007FB8B6 /* MatrixImpl.cpp */; };
+		16B3BB8818A2E2FC007FB8B6 /* matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B3BB8618A2E2FC007FB8B6 /* matrix.cpp */; };
+		16B3BB9018A2EDEF007FB8B6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B3BB8E18A2EDEF007FB8B6 /* main.cpp */; };
+		16B3BB9418A2F1E4007FB8B6 /* Double.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B3BB9218A2F1E4007FB8B6 /* Double.cpp */; };
+		16B3BBD318A2F70A007FB8B6 /* testmemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B3BBD118A2F70A007FB8B6 /* testmemory.cpp */; };
+		16B3BBD618A2FC93007FB8B6 /* DoublePtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B3BBD418A2FC93007FB8B6 /* DoublePtr.cpp */; };
+		16B3BBD918A39D3E007FB8B6 /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B3BBD718A39D3E007FB8B6 /* Cache.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,13 +32,44 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		160D44E918AF6FFC00857B59 /* DoubleRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoubleRef.cpp; sourceTree = "<group>"; };
+		160D44EA18AF6FFC00857B59 /* DoubleRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleRef.h; sourceTree = "<group>"; };
 		16B3BB7718A2ABC5007FB8B6 /* projetInfo-AFMC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "projetInfo-AFMC"; sourceTree = BUILT_PRODUCTS_DIR; };
-		16B3BB7A18A2ABC5007FB8B6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		16B3BB7C18A2ABC5007FB8B6 /* projetInfo_AFMC.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = projetInfo_AFMC.1; sourceTree = "<group>"; };
+		16B3BB8318A2ABF7007FB8B6 /* MatrixImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatrixImpl.cpp; sourceTree = "<group>"; };
+		16B3BB8418A2ABF7007FB8B6 /* MatrixImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixImpl.h; sourceTree = "<group>"; };
+		16B3BB8618A2E2FC007FB8B6 /* matrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = matrix.cpp; sourceTree = "<group>"; };
+		16B3BB8718A2E2FC007FB8B6 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
+		16B3BB8E18A2EDEF007FB8B6 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		16B3BB8F18A2EDEF007FB8B6 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		16B3BB9218A2F1E4007FB8B6 /* Double.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Double.cpp; sourceTree = "<group>"; };
+		16B3BB9318A2F1E4007FB8B6 /* Double.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Double.h; sourceTree = "<group>"; };
+		16B3BBB218A2F5E6007FB8B6 /* Memory.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Memory.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		16B3BBC318A2F610007FB8B6 /* Matrices.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Matrices.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		16B3BBD118A2F70A007FB8B6 /* testmemory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testmemory.cpp; sourceTree = "<group>"; };
+		16B3BBD218A2F70A007FB8B6 /* testmemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testmemory.h; sourceTree = "<group>"; };
+		16B3BBD418A2FC93007FB8B6 /* DoublePtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoublePtr.cpp; sourceTree = "<group>"; };
+		16B3BBD518A2FC93007FB8B6 /* DoublePtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoublePtr.h; sourceTree = "<group>"; };
+		16B3BBD718A39D3E007FB8B6 /* Cache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cache.cpp; sourceTree = "<group>"; };
+		16B3BBD818A39D3E007FB8B6 /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		16B3BB7418A2ABC5007FB8B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16B3BBAF18A2F5E6007FB8B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16B3BBC018A2F610007FB8B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,7 +82,10 @@
 		16B3BB6E18A2ABC5007FB8B6 = {
 			isa = PBXGroup;
 			children = (
-				16B3BB7918A2ABC5007FB8B6 /* projetInfo-AFMC */,
+				16B3BBD018A2F686007FB8B6 /* TestMemory */,
+				16B3BB9118A2F1B4007FB8B6 /* Memory */,
+				16B3BB8D18A2EDB4007FB8B6 /* TestMatrices */,
+				16B3BB7918A2ABC5007FB8B6 /* Matrices */,
 				16B3BB7818A2ABC5007FB8B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,20 +94,76 @@
 			isa = PBXGroup;
 			children = (
 				16B3BB7718A2ABC5007FB8B6 /* projetInfo-AFMC */,
+				16B3BBB218A2F5E6007FB8B6 /* Memory.dylib */,
+				16B3BBC318A2F610007FB8B6 /* Matrices.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		16B3BB7918A2ABC5007FB8B6 /* projetInfo-AFMC */ = {
+		16B3BB7918A2ABC5007FB8B6 /* Matrices */ = {
 			isa = PBXGroup;
 			children = (
-				16B3BB7A18A2ABC5007FB8B6 /* main.cpp */,
+				16B3BB8318A2ABF7007FB8B6 /* MatrixImpl.cpp */,
+				16B3BB8418A2ABF7007FB8B6 /* MatrixImpl.h */,
+				16B3BB8618A2E2FC007FB8B6 /* matrix.cpp */,
+				16B3BB8718A2E2FC007FB8B6 /* matrix.h */,
 				16B3BB7C18A2ABC5007FB8B6 /* projetInfo_AFMC.1 */,
 			);
+			name = Matrices;
 			path = "projetInfo-AFMC";
 			sourceTree = "<group>";
 		};
+		16B3BB8D18A2EDB4007FB8B6 /* TestMatrices */ = {
+			isa = PBXGroup;
+			children = (
+				16B3BB8E18A2EDEF007FB8B6 /* main.cpp */,
+				16B3BB8F18A2EDEF007FB8B6 /* main.h */,
+			);
+			name = TestMatrices;
+			sourceTree = "<group>";
+		};
+		16B3BB9118A2F1B4007FB8B6 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				16B3BB9218A2F1E4007FB8B6 /* Double.cpp */,
+				16B3BB9318A2F1E4007FB8B6 /* Double.h */,
+				16B3BBD418A2FC93007FB8B6 /* DoublePtr.cpp */,
+				160D44E918AF6FFC00857B59 /* DoubleRef.cpp */,
+				160D44EA18AF6FFC00857B59 /* DoubleRef.h */,
+				16B3BBD518A2FC93007FB8B6 /* DoublePtr.h */,
+			);
+			name = Memory;
+			sourceTree = "<group>";
+		};
+		16B3BBD018A2F686007FB8B6 /* TestMemory */ = {
+			isa = PBXGroup;
+			children = (
+				16B3BBD118A2F70A007FB8B6 /* testmemory.cpp */,
+				16B3BBD218A2F70A007FB8B6 /* testmemory.h */,
+				16B3BBD718A39D3E007FB8B6 /* Cache.cpp */,
+				16B3BBD818A39D3E007FB8B6 /* Cache.h */,
+			);
+			name = TestMemory;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		16B3BBB018A2F5E6007FB8B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16B3BBC118A2F610007FB8B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		16B3BB7618A2ABC5007FB8B6 /* projetInfo-AFMC */ = {
@@ -85,6 +182,40 @@
 			productName = "projetInfo-AFMC";
 			productReference = 16B3BB7718A2ABC5007FB8B6 /* projetInfo-AFMC */;
 			productType = "com.apple.product-type.tool";
+		};
+		16B3BBB118A2F5E6007FB8B6 /* Memory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16B3BBBC18A2F5E6007FB8B6 /* Build configuration list for PBXNativeTarget "Memory" */;
+			buildPhases = (
+				16B3BBAE18A2F5E6007FB8B6 /* Sources */,
+				16B3BBAF18A2F5E6007FB8B6 /* Frameworks */,
+				16B3BBB018A2F5E6007FB8B6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Memory;
+			productName = Memory;
+			productReference = 16B3BBB218A2F5E6007FB8B6 /* Memory.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		16B3BBC218A2F610007FB8B6 /* Matrices */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16B3BBCD18A2F610007FB8B6 /* Build configuration list for PBXNativeTarget "Matrices" */;
+			buildPhases = (
+				16B3BBBF18A2F610007FB8B6 /* Sources */,
+				16B3BBC018A2F610007FB8B6 /* Frameworks */,
+				16B3BBC118A2F610007FB8B6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Matrices;
+			productName = Matrices;
+			productReference = 16B3BBC318A2F610007FB8B6 /* Matrices.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
@@ -108,6 +239,8 @@
 			projectRoot = "";
 			targets = (
 				16B3BB7618A2ABC5007FB8B6 /* projetInfo-AFMC */,
+				16B3BBB118A2F5E6007FB8B6 /* Memory */,
+				16B3BBC218A2F610007FB8B6 /* Matrices */,
 			);
 		};
 /* End PBXProject section */
@@ -117,7 +250,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16B3BB7B18A2ABC5007FB8B6 /* main.cpp in Sources */,
+				16B3BB8518A2ABF7007FB8B6 /* MatrixImpl.cpp in Sources */,
+				16B3BB8818A2E2FC007FB8B6 /* matrix.cpp in Sources */,
+				16B3BBD318A2F70A007FB8B6 /* testmemory.cpp in Sources */,
+				16B3BBD918A39D3E007FB8B6 /* Cache.cpp in Sources */,
+				16B3BB9418A2F1E4007FB8B6 /* Double.cpp in Sources */,
+				16B3BBD618A2FC93007FB8B6 /* DoublePtr.cpp in Sources */,
+				160D44EB18AF6FFC00857B59 /* DoubleRef.cpp in Sources */,
+				16B3BB9018A2EDEF007FB8B6 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16B3BBAE18A2F5E6007FB8B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16B3BBBF18A2F610007FB8B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +360,42 @@
 			};
 			name = Release;
 		};
+		16B3BBBD18A2F5E6007FB8B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		16B3BBBE18A2F5E6007FB8B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		16B3BBCE18A2F610007FB8B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		16B3BBCF18A2F610007FB8B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -225,6 +415,25 @@
 				16B3BB8218A2ABC5007FB8B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16B3BBBC18A2F5E6007FB8B6 /* Build configuration list for PBXNativeTarget "Memory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16B3BBBD18A2F5E6007FB8B6 /* Debug */,
+				16B3BBBE18A2F5E6007FB8B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16B3BBCD18A2F610007FB8B6 /* Build configuration list for PBXNativeTarget "Matrices" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16B3BBCE18A2F610007FB8B6 /* Debug */,
+				16B3BBCF18A2F610007FB8B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

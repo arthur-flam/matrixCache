@@ -11,4 +11,9 @@
 
 #include <iostream>
 
+#include "matrix.h"
+// il faudrait utiliser une librairie dynamique (c'est un détail...?)
+
+
+
 #endif /* defined(__projetInfo_AFMC__main__) */

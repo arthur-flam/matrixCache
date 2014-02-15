@@ -10,5 +10,7 @@
 #define __projetInfo_AFMC__testmemory__
 
 #include <iostream>
+#include "Double.h"
+#include "DoublePtr.h"
 
 #endif /* defined(__projetInfo_AFMC__testmemory__) */

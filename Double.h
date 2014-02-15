@@ -11,4 +11,28 @@
 
 #include <iostream>
 
+
+class Double{
+public:
+    // Constructeurs et méthodes spéciales
+    Double();
+    Double(double nd);
+    Double( const Double& other );
+    Double& operator=( const Double& other );
+    
+    bool operator==( const Double& other );
+    Double operator*( const Double& other );
+    Double operator+( const Double& other );
+    Double operator+=( const Double& other );
+    friend std::ostream& operator<<(std::ostream&, const Double&);
+
+    // conversion en double
+    // operator double();
+
+private:
+    double d;
+};
+
+
+
 #endif /* defined(__projetInfo_AFMC__Double__) */

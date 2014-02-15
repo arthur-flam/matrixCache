@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Matrices.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Memory.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>projetInfo-AFMC.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +23,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>16B3BB7618A2ABC5007FB8B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>16B3BBB118A2F5E6007FB8B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>16B3BBC218A2F610007FB8B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

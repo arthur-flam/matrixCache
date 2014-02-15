@@ -10,5 +10,27 @@
 #define __projetInfo_AFMC__MatrixImpl__
 
 #include <iostream>
+#include "Double.h"
+
+#define SIZE  2
+
+class MatrixImpl{
+  public:
+    MatrixImpl();
+    ~MatrixImpl(); // il faut libérer le tableau alloué sur le tas
+    MatrixImpl( const MatrixImpl& other ); // pour copier les données et non juste pointer desssus
+    MatrixImpl& operator=( const MatrixImpl& other ); // idem
+    
+    //Double operator()(int x, int y);
+    Double &operator()(int x, int y);
+    friend MatrixImpl operator*(MatrixImpl& A, MatrixImpl& B);
+    void print();
+
+    
+  private:
+    Double **tableau;
+    void alloc();
+};
+
 
 #endif /* defined(__projetInfo_AFMC__MatrixImpl__) */

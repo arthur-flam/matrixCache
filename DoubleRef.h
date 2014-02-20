@@ -14,14 +14,11 @@
 
 class DoubleRef{
 public:
-    DoubleRef();
-    
-    operator Double&();
-    
-    DoubleRef operator*(); // écriture?
-    DoubleRef operator*() const; // lecture?
-    
     DoubleRef(Double& r_):r(r_){}
+    DoubleRef(Double* r_):r(*r_){}
+    operator Double&();
+    operator Double&() const;
+    operator Double();
     
 private:
     Double& r;

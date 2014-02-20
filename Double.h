@@ -13,7 +13,7 @@
 
 
 class Double{
-public:
+  public:
     // Constructeurs et méthodes spéciales
     Double();
     Double(double nd);
@@ -25,11 +25,8 @@ public:
     Double operator+( const Double& other );
     Double operator+=( const Double& other );
     friend std::ostream& operator<<(std::ostream&, const Double&);
-
-    // conversion en double
-    // operator double();
-
-private:
+    
+  private:
     double d;
 };
 

@@ -7,9 +7,10 @@
 //
 
 #include "testmemory.h"
+#include "matrix.h"
 
 
-int mainXXX(int argc, const char * argv[]){
+int main(int argc, const char * argv[]){
     // test des constructeurs et opérateurs d'affection
     std::cout << "Test des opérateurs" << std::endl;
     Double a = Double();
@@ -24,7 +25,7 @@ int mainXXX(int argc, const char * argv[]){
     // test des opérateurs
     std::cout << "multiplication " << b*d2 << std::endl;
     std::cout << "égalité " << (b==b) << std::endl;
-    std::cout << "addition " << (b==b+b) << std::endl << std::endl << std::endl;
+    std::cout << "addition " << b+b << std::endl << std::endl << std::endl;
 
     
     // [25]
@@ -58,24 +59,28 @@ int mainXXX(int argc, const char * argv[]){
     for (int i = 0; i < 3; i++)
         sum += p3[i];
     // - on a défini un opérateur += dans la classe Double
-    // - ça compile
-    // - on intercepte visiblement les accès mémoire rien qu'avec ça, sauf si quelque chose nous échappe.
+    // - ça compile, quelque chose nous échappe ?
     delete [] p3;
     std::cout << sum << std::endl << std::endl;
     
     
-    // Pour intercepter les accès en écriture des DoublePtr,
-    // il ???? suffit d'utiliser un opérateur d'indirection attendant un const
-    // (merci de l'info)
-    std::cout << "Double d4;" << std::endl;
+    std::cout << "> Double d4;" << std::endl;
     Double d4;
-    std::cout << "DoublePtr p = &d;" << std::endl;
+    std::cout << "> DoublePtr p = &d;" << std::endl;
     DoublePtr p4 = &d4;
-    std::cout << "*p = 5.4;" << std::endl;
-    //*p4 = 5.4;
-    std::cout << "*p" << std::endl << *p4 << std::endl;
+    std::cout << "> *p = 5.4;" << std::endl;
+    *p4 = 5.4;
+    std::cout << "> *p" << std::endl << *p4 << std::endl;
 
-    
+    std::cout << std::endl << "Test avec des matrices" << std::endl;
+    Matrix A = Matrix();
+    for(int i=0;i<SIZE;i++){
+        for(int j=0;j<SIZE;j++){
+            A(i,j) = i+j;
+        }
+    }
+    std::cout << "A:" << std::endl;
+
     
     return 0;
 };

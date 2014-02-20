@@ -8,11 +8,18 @@
 
 #include "DoubleRef.h"
 
-
-//
-//DoubleRef::operator Double*() {
-//    std::cout << "READ : DoublePtr converted to Double*" <<std::endl;
-//    return P;
-//}
+DoubleRef::operator Double&() const{
+    std::cout << "???WRITE : DoublePtr converted to Double*" <<std::endl;
+    return r;
+}
+DoubleRef::operator Double&() {
+    std::cout << "??????READ : DoublePtr converted to Double*" <<std::endl;
+    return r;
+}
+DoubleRef::operator Double() {
+        std::cout << ".." <<std::endl;
+        return r;
+}
+    
 
 

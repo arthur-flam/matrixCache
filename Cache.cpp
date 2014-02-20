@@ -18,6 +18,7 @@ CacheLine::CacheLine(){
 }
 // Destructeur: il faut libérer la mémoire allouée sur la pile
 CacheLine::~CacheLine(){
+    // TODO
     //delete cases;
 }
 
@@ -109,7 +110,7 @@ void Cache::hit_ratio(){
 }
 
 
-int main(int argc, const char * argv[]){
+int mainGERSF(int argc, const char * argv[]){
     std::cout << "Test du cache" << std::endl;
     double a = 5.;
     double* pa = &a;

@@ -125,12 +125,12 @@
 		16B3BB9118A2F1B4007FB8B6 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
-				16B3BB9218A2F1E4007FB8B6 /* Double.cpp */,
 				16B3BB9318A2F1E4007FB8B6 /* Double.h */,
-				16B3BBD418A2FC93007FB8B6 /* DoublePtr.cpp */,
-				160D44E918AF6FFC00857B59 /* DoubleRef.cpp */,
-				160D44EA18AF6FFC00857B59 /* DoubleRef.h */,
+				16B3BB9218A2F1E4007FB8B6 /* Double.cpp */,
 				16B3BBD518A2FC93007FB8B6 /* DoublePtr.h */,
+				16B3BBD418A2FC93007FB8B6 /* DoublePtr.cpp */,
+				160D44EA18AF6FFC00857B59 /* DoubleRef.h */,
+				160D44E918AF6FFC00857B59 /* DoubleRef.cpp */,
 			);
 			name = Memory;
 			sourceTree = "<group>";

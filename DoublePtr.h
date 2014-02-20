@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "Double.h"
+#include "DoubleRef.h"
 
 class DoublePtr{
 public:
@@ -24,10 +25,13 @@ public:
     DoublePtr operator++(int);
     // en cpp cette signature c'est la post-incrémentation !
 
-    //operator const Double*();
-    //const Double operator*();
-    DoublePtr& operator*(); // écriture
-//    DoublePtr& operator*() const; // lecture
+    
+    // Test DoubleRef
+    // DoubleRef operator*();
+
+    // Test opérateurs
+    Double operator*(); // écriture
+    const Double operator*() const; // lecture
 
 private:
     Double* P;

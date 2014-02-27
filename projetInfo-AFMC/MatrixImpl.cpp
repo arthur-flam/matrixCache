@@ -91,6 +91,7 @@ MatrixImpl operator*(MatrixImpl& A, MatrixImpl& B){
             }
         }
     }
+    std::cout<<"done multiplication"<<std::endl;
     return result;
 }
 

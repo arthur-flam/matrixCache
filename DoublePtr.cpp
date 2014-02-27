@@ -23,11 +23,9 @@ DoublePtr::DoublePtr(Double* p){
 
 
 DoubleRef DoublePtr::operator*() {
-    //std::cout << "DoublePtr dereferenced" <<std::endl;
     return DoubleRef(*P);
 }
 DoublePtr::operator Double*() const{
-    //std::cout << "READ (deref: const DoublePtr -> Double*)" <<std::endl;
     return P;
 }
     

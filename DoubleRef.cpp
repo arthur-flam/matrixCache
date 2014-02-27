@@ -24,12 +24,13 @@ Double DoubleRef::operator =(const Double& other){
     this->r = other;
     return this->r;
 }
+
 Double& DoubleRef::get_ref() const{
     std::cout << "READ (get_ref)" <<std::endl;
     return r;
 }
-
 DoubleRef::operator Double(){
+    std::cout << "READ (to Double)" <<std::endl;
     return r;
 }
 

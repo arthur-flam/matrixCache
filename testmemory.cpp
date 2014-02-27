@@ -10,7 +10,7 @@
 #include "matrix.h"
 
 
-int mainXXX(int argc, const char * argv[]){
+int main(int argc, const char * argv[]){
     // test des constructeurs et opérateurs d'affection
     std::cout << "// Constructeurs " << std::endl;
     std::cout << "> Double a = Double(); a;" << std::endl;

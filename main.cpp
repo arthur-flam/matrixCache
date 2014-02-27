@@ -8,16 +8,21 @@
 
 #include "main.h"
 
-int main(int argc, const char * argv[]){
+int mainXX(int argc, const char * argv[]){
+    std::cout << "> Matrix A = Matrix();" << std::endl;
     Matrix A = Matrix();
+    std::cout << "> Matrix B = Matrix();" << std::endl;
     Matrix B = Matrix();
+    std::cout << "> Matrix AB = Matrix();" << std::endl;
     Matrix AB = Matrix();
+    std::cout << "// init A, B..." << std::endl;
     for(int i=0;i<SIZE;i++){
         for(int j=0;j<SIZE;j++){
             A(i,j) = i+j;
             B(i,j) = j-i;
         }
     }
+    std::cout << "> AB = A*B;" << std::endl;
     AB = A*B;
     std::cout << "A:" << std::endl;
     A.print();

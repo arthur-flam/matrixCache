@@ -38,12 +38,12 @@ class CacheLine{
     CacheLine();
     ~CacheLine();
     bool valid=false;
-    uint64_t tag;
+    uintptr_t tag;
     
-    static uint64_t get_tag(double* adresse);
-    static uint16_t get_offset(double* adresse); // should be large enough
+    static uintptr_t get_tag(double* adresse);
+    static uintptr_t get_offset(double* adresse); // should be large enough
     void load(double* adress);
-    double get_case(unsigned int offset);
+    double get_case(uintptr_t offset);
     
   private:
     static const unsigned int w=4; // nombre de bits pour l'offset

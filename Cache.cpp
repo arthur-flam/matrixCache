@@ -23,14 +23,14 @@ CacheLine::~CacheLine(){
 }
 
 // Obtention du tag corespondant à une adresse
-uint64_t CacheLine::get_tag(double* adress){
-    uint64_t adress_64 = (uint64_t) adress;
+uintptr_t CacheLine::get_tag(double* adress){
+    uintptr_t adress_64 = (uintptr_t) adress;
     return adress_64 - adress_64 % 2^w;
 }
 // Obtention de l'offset
-uint16_t CacheLine::get_offset(double* adress){
-    uint64_t adress_64 = (uint64_t) adress;
-    uint16_t offset = (uint16_t) adress_64 % 2^w;
+uintptr_t CacheLine::get_offset(double* adress){
+    uintptr_t adress_64 = (uintptr_t) adress;
+    uintptr_t offset = (uintptr_t) adress_64 % 2^w;
     // on pourrait - soustraire le tag à l'adresse (autant l'utiliser)
     //             - utiliser une opération bitwise comme >>
     // je ne sais pas quelle approche est la plus rapide...
@@ -50,7 +50,7 @@ void CacheLine::load(double* adress){
     tag = (uint64_t) start;
     valid=true;
 }
-double CacheLine::get_case(unsigned int offset){
+double CacheLine::get_case(uintptr_t offset){
     return cases[offset];
 };
 
@@ -75,7 +75,7 @@ Cache::~Cache(){
 
 // Index de la ligne pour une adresse donnée
 int Cache::lineIndex(double* adress){
-    uint64_t adress_int = (uint64_t) adress;
+    uintptr_t adress_int = (uintptr_t) adress;
     return (adress_int / 2^w) % 2^n ; // hachage
 }
 
@@ -90,7 +90,7 @@ double Cache::get(double* adress){
     } else {
         hit+=1;
     }
-    unsigned int offset = lignes[l].get_offset(adress);
+    uintptr_t offset = lignes[l].get_offset(adress);
     return lignes[l].get_case(offset);
 }
 // écriture

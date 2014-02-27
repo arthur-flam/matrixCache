@@ -41,7 +41,7 @@ Matrix operator*(Matrix& A, Matrix& B){
 // [11] chez moi cela compile sans plus de travail
 
 
-Double &Matrix::operator()(int i, int j){
+DoubleRef Matrix::operator()(int i, int j){
     //double d =(double) this->M(i,j);
     //double& rd = d;
 //    Double& d = this->M(i,j);

@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "Double.h"
+#include "DoublePtr.h"
 
 #define SIZE  2
 
@@ -22,13 +23,16 @@ class MatrixImpl{
     MatrixImpl& operator=( const MatrixImpl& other ); // idem
     
     //Double operator()(int x, int y);
-    Double &operator()(int x, int y);
+    //Double &operator()(int x, int y);
+    DoubleRef operator()(int x, int y);
+    
     friend MatrixImpl operator*(MatrixImpl& A, MatrixImpl& B);
     void print();
 
     
   private:
-    Double **tableau;
+    //Double **tableau;
+    DoublePtr *tableau;
     void alloc();
 };
 

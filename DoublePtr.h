@@ -13,6 +13,8 @@
 #include "Double.h"
 #include "DoubleRef.h"
 
+class DoubleRef;
+
 class DoublePtr{
 public:
     DoublePtr();
@@ -21,18 +23,19 @@ public:
     // Copie et affectation: ici on veut copier un pointeur,
     // pas la valeur vers laquelle il pointe, donc pas besoin
     
-    operator Double*();
     DoublePtr operator++(int);
+    DoublePtr operator+(int);
     // en cpp cette signature c'est la post-incrémentation !
 
-    
-    // Test DoubleRef
-    // DoubleRef operator*();
 
     // Test opérateurs
-    Double operator*(); // écriture
-    const Double operator*() const; // lecture
-
+//    Double& operator*(); // écriture
+    DoubleRef operator*();
+    //operator Double*();
+    operator Double*() const;
+    
+    //DoubleRef operator[](int);
+    
 private:
     Double* P;
 };

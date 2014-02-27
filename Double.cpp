@@ -16,21 +16,19 @@ Double::Double(){
 Double::Double(double nd){
     d=nd;
 }
-
 // Constructeur par copie
 Double::Double(const Double& other ){
-    //std::cout << "READ Double" << std::endl;
     this->d = other.d;
 }
-
 // Opérateur d'affectation
 Double& Double::operator=( const Double& other ){
-    std::cout << "WROTE Double with =" << std::endl;
+    //std::cout << "wrote Double (=)" << std::endl;
     if (this == &other)
         return *this; // évitons du travail
     this->d = other.d;
     return *this;
 };
+
 
 // Opérateurs divers
 bool Double::operator==( const Double& other ){
@@ -43,7 +41,7 @@ Double Double::operator+( const Double& other ){
     return Double(this->d + other.d);
 };
 Double Double::operator+=( const Double& other ){
-    std::cout << "WROTE Double with +=" << std::endl;
+    //std::cout << "wrote Double (+=)" << std::endl;
     this->d += other.d;
     return *this;
 };

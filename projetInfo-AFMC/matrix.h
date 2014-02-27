@@ -24,7 +24,7 @@ public:
     Matrix( const Matrix& other ); // pour copier les données et non juste pointer desssus
     Matrix& operator=( const Matrix& other ); // idem
     
-    Double &operator()(int x, int y);
+    DoubleRef operator()(int x, int y);
     friend Matrix operator*(Matrix& A, Matrix& B);
     void print();
     

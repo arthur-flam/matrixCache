@@ -11,21 +11,24 @@
 
 #include <iostream>
 #include "Double.h"
+#include "DoublePtr.h"
+
+class DoublePtr;
+
 
 class DoubleRef{
 public:
     DoubleRef(Double& r_):r(r_){}
-    DoubleRef(Double* r_):r(*r_){}
-    operator Double&();
-    operator Double&() const;
-    operator Double();
     
+    operator const DoublePtr();
+    Double operator =(const Double&);
+    Double& get_ref() const;
+    friend std::ostream& operator<<(std::ostream&, const DoubleRef);
+    operator Double();
+
 private:
     Double& r;
 };
-
-
-
 
 
 #endif /* defined(__projetInfo_AFMC__DoubleRef__) */

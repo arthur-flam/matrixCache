@@ -8,38 +8,33 @@
 
 #include "DoublePtr.h"
 
-
+// Constructeurs
 DoublePtr::DoublePtr(){
 }
 DoublePtr::DoublePtr(Double* p){
     P=p;
 }
 
+// Casting vers Double*
+//DoublePtr::operator Double*() {
+//    std::cout << "casted DoublePtr -> Double*" <<std::endl;
+//    return P;
+//}
 
-DoublePtr::operator Double*() {
-    std::cout << "DoublePtr converted to Double*" <<std::endl;
+
+DoubleRef DoublePtr::operator*() {
+    //std::cout << "DoublePtr dereferenced" <<std::endl;
+    return DoubleRef(*P);
+}
+DoublePtr::operator Double*() const{
+    //std::cout << "READ (deref: const DoublePtr -> Double*)" <<std::endl;
     return P;
 }
     
-    
-Double DoublePtr::operator*() {
-    std::cout << "WRITE : DoublePtr accessed for its l-value" <<std::endl;
-    return *P;
-}
-const Double DoublePtr::operator*() const{
-    std::cout << "READ : DoublePtr accessed for its l-value" <<std::endl;
-    //const DoublePtr& out = *this;
-    return *P;
-    //return *this;
-}
-    
-// Test PointerRef
-//DoubleRef DoublePtr::operator*() {
-//        std::cout << "WRITE : DoublePtr accessed for its l-value" <<std::endl;
-//        return (DoubleRef) *this;
-//}
-    
-    
+
 DoublePtr DoublePtr::operator++(int) {
     return (this->P)++;
+}
+DoublePtr DoublePtr::operator+(int i) {
+    return (this->P)=this->P+i;
 }

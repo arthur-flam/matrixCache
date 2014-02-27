@@ -8,7 +8,7 @@
 
 #include "main.h"
 
-int main2(int argc, const char * argv[]){
+int main(int argc, const char * argv[]){
     Matrix A = Matrix();
     Matrix B = Matrix();
     Matrix AB = Matrix();

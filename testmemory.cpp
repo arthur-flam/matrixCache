@@ -16,7 +16,7 @@ int main(int argc, const char * argv[]){
     bool test_cache=false;
     bool test_DoublePtrRef=false;
     bool test_DoublePtrRefMatrices=false;
-    bool test_multiplication=false;
+    bool test_multiplication=true;
     bool test_parcoursTableauDouble=false;
     
 

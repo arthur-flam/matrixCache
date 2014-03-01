@@ -23,7 +23,6 @@ Matrix::Matrix(const Matrix& other ){
     this->M = other.M;
 }
 
-
 // Opérateur d'affectation
 Matrix& Matrix::operator=( const Matrix& other ){
     if (this == &other)
@@ -31,7 +30,6 @@ Matrix& Matrix::operator=( const Matrix& other ){
     this->M = other.M;
     return *this;
 };
-
 
 // Opérateur externe pour la multiplication par une matrice
 Matrix operator*(Matrix& A, Matrix& B){
@@ -44,10 +42,9 @@ Matrix operator*(Matrix& A, Matrix& B){
 double& Matrix::operator()(int i, int j){
     return (this->M(i,j)).get_double_ref();
 };
-// [22] Pour le moment on doit utiliser Double ici pour que ça marche
-// En effet, pour le moment M contient des Doubles, qu'on ne sait pas convertir en double
-// On peut tenter de caster en double, mais on renverrait une référence vers un Double et non vers un double...
-// Pour le moment la classe Double est donc visible de l'utilisateur final...
+// [22] J'avais utilisé Double comme classe de sortie pour que ça marche
+// [22++] J'ai fait du nettoyage pour cacher l'implémentation
+
 
 void Matrix::print(){
     this->M.print();

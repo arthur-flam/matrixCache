@@ -72,9 +72,6 @@ MatrixImpl& MatrixImpl::operator=( const MatrixImpl& other ){
 
 //Double &MatrixImpl::operator()(int i, int j){
 DoubleRef MatrixImpl::operator()(int i, int j){
-    //DoubleRef out = *(*(tableau+i)+j);
-    //std::cout<<"..."<<out<<std::endl;
-    //return out;
     return tableau[i][j];
 };
 
@@ -86,7 +83,6 @@ MatrixImpl operator*(MatrixImpl& A, MatrixImpl& B){
     for(int i=0;i<SIZE;i++){
         for(int j=0;j<SIZE;j++){
             for(int k=0;k<SIZE;k++){
-                //result.tableau[i][j] = result.tableau[i][j] + A.tableau[i][k] * B.tableau[k][j];
                 result(i,j) = Double(result(i,j)) + Double(A(i,k)) * Double(B(k,j));
             }
         }

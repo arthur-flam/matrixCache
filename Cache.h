@@ -61,6 +61,7 @@ class Cache{
     double get(double* adress);
     void set(double* adress);
     void hit_ratio();
+    void clear();
   private:
     static const unsigned int n=5;
     static const unsigned int nn=32; // 2^n

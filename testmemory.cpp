@@ -186,6 +186,7 @@ int main(int argc, const char * argv[]){
     }
     if(test_parcoursDoubleArray){
         std::cout << "[Q37] Parcours d'un tableau de Double" << std::endl;
+        
         DoublePtr p = new Double[100];
         for(int i=0;i<100;++i)
             std::cout << *(p+i) << std::endl;
@@ -194,6 +195,10 @@ int main(int argc, const char * argv[]){
         // Le hit ration est très mauvais
         // c'est surprenant. Visiblement la mémoire est allouée avec de gros trous
         // pourtant la taille d'un double est 8...
+        
+        Matrix A = Matrix();
+        DoubleRef::cache.hit_ratio();
+
         
     }
     

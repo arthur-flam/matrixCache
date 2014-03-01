@@ -109,5 +109,12 @@ void Cache::hit_ratio(){
     std::cout << "Ratio  : " << ratio << std::endl;
 }
 
+void Cache::clear(){
+    hit=0;
+    miss=0;
+    for(int i=0;i<nn;i++)
+        lignes[i].valid=false;
+}
+
 
 

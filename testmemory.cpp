@@ -12,22 +12,22 @@
 
 
 int main(int argc, const char * argv[]){
-    // Verbose
+    // Verbose level
     bool print_matrixes = false;
     
     // Tests
     bool test_cache=false;
     bool test_DoublePtrRef=false;
     bool test_DoublePtrRefMatrices=false;
-    bool test_mult=true;
-    bool test_parcoursDoubleArray=false;
+    bool test_multiplication=true;
+    bool test_parcoursTableauDouble=false;
     
 
     Cache cache;
     DoubleRef::cache=cache;
     
     
-    // CACHE
+    // TESTS
     if(test_cache){
         std::cout << "Test du cache" << std::endl;
         double a_ = 5.;
@@ -157,7 +157,8 @@ int main(int argc, const char * argv[]){
         //    std::cout << A(0,1) << std::endl;
         //    std::cout << A(1,1) << std::endl;
     }
-    if(test_mult){
+    if(test_multiplication){
+        DoubleRef::cache.clear();
         std::cout << "> Matrix A = Matrix();" << std::endl;
         Matrix A = Matrix();
         std::cout << "> Matrix B = Matrix();" << std::endl;
@@ -183,23 +184,32 @@ int main(int argc, const char * argv[]){
             AB.print();
         }
         DoubleRef::cache.hit_ratio();
+        //-> 46% vanilla
+        //-> 50% avec le write-through
     }
-    if(test_parcoursDoubleArray){
-        std::cout << "[Q37] Parcours d'un tableau de Double" << std::endl;
+    if(test_parcoursTableauDouble){
+        // [Q35]
+        std::cout << "[Q35] Parcours d'un tableau de Double" << std::endl;
+        DoubleRef::cache.clear();
+        // TABLEAU
+        std::cout << "> DoublePtr p = new Double[SIZE];" << std::endl;
+        DoublePtr p = new Double[SIZE];
+        std::cout << "> for(int i=0;i<SIZE;++i); *(p+i);" << std::endl;
+        for(int i=0;i<SIZE;++i){
+            std::cout<<*(p+i)<<std::endl;
+        }
         
-        DoublePtr p = new Double[100];
-        for(int i=0;i<100;++i)
-            std::cout << *(p+i) << std::endl;
-        //delete [] p;
-        DoubleRef::cache.hit_ratio();
+        
+        DoubleRef::cache.hit_ratio(); // -> 1 hit !!!
         // Le hit ration est très mauvais
-        // c'est surprenant. Visiblement la mémoire est allouée avec de gros trous
-        // pourtant la taille d'un double est 8...
-        
-        Matrix A = Matrix();
-        DoubleRef::cache.hit_ratio();
+        // c'est surprenant ? Visiblement la mémoire est allouée avec de gros trous (?!?)
 
-        
+        // MATRICE
+        DoubleRef::cache.clear();
+        Matrix A = Matrix();
+        A.print();
+        DoubleRef::cache.hit_ratio(); // -> 50%
+        // le hit ratio est meilleur avec des matrices
     }
     
     return 0;

@@ -45,6 +45,7 @@ class CacheLine{
     static uintptr_t get_offset(double* adresse); // should be large enough
     void load(double* adress);
     double get_case(uintptr_t offset);
+    void set_case(uintptr_t offset, double value); // après une écriture
     
   private:
     static const unsigned int w=4; // nombre de bits pour l'offset
@@ -58,8 +59,11 @@ class Cache{
     Cache();
     ~Cache();
     int lineIndex(double* adress);
+    bool is_present(double* adress);
     double get(double* adress);
     void set(double* adress);
+    void write(double* adress);
+    void set_unique(double* adress); // modification pontuelle après une écriture
     void hit_ratio();
     void clear();
   private:

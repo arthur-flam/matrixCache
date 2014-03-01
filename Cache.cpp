@@ -15,6 +15,7 @@
 // Contructeur
 CacheLine::CacheLine(){
     cases = new char[ww];
+    valid = false;
 }
 // Destructeur: il faut libérer la mémoire allouée sur la pile
 CacheLine::~CacheLine(){
@@ -50,7 +51,13 @@ void CacheLine::load(double* adress){
 }
 double CacheLine::get_case(uintptr_t offset){
     return *((double*) (cases+offset)); // on s'assure d'avoir le bon type...
-};
+}
+void CacheLine::set_case(uintptr_t offset, double value){
+    *((double*) (cases+offset)) = value;
+}
+
+
+
 
 
 
@@ -80,23 +87,37 @@ int Cache::lineIndex(double* adress){
 
 // I/O dans le cache
 // lecture
-double Cache::get(double* adress){
+bool Cache::is_present(double* adress){
     int l = lineIndex(adress);
-    //std::cout<<"ligne: "<<l<<std::endl;
-    //std::cout<<"adress: "<<adress<<std::endl;
-    if(lignes[l].valid==false || lignes[l].tag!=CacheLine::get_tag(adress)){
+    return ((lignes[l].valid==true) && (lignes[l].tag==CacheLine::get_tag(adress)));
+}
+double Cache::get(double* adress){
+    if(!is_present(adress)){
         set(adress);
         miss+=1;
     } else {
         hit+=1;
     }
-    uintptr_t offset = lignes[l].get_offset(adress); // ???
+    int l = lineIndex(adress);
+    uintptr_t offset = lignes[l].get_offset(adress);
     return lignes[l].get_case(offset);
 }
 // écriture
 void Cache::set(double* adress){
     int l = lineIndex(adress);
-    lignes[l].load(adress); // ????
+    lignes[l].load(adress);
+}
+void Cache::set_unique(double* adress){
+    int l = lineIndex(adress);
+    uintptr_t offset = lignes[l].get_offset(adress);
+    lignes[l].set_case(offset, *adress);
+}
+void Cache::write(double* adress){
+    if(!is_present(adress)){
+        set(adress);
+    } else {
+        set_unique(adress);
+    }
 }
 
 // Obtention du hit ratio
@@ -109,6 +130,7 @@ void Cache::hit_ratio(){
     std::cout << "Ratio  : " << ratio << std::endl;
 }
 
+// Vider le cache
 void Cache::clear(){
     hit=0;
     miss=0;

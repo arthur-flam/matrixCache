@@ -21,8 +21,11 @@ DoubleRef::operator const DoublePtr(){
     return out;     
 }
 Double DoubleRef::operator =(const Double& other){
-    //std::cout << "WRITE" <<std::endl;
-    this->r = other;
+    // std::cout << "WRITE" <<std::endl;
+    this->r = other; // mémoire principale mise à jour
+    // [36] Cache + Ecriture
+    double* adress  = &(this->get_double_ref()); // adresse du double où l'on écrit
+    cache.write(adress); // cache mis à jour
     return this->r;
 }
 

@@ -62,8 +62,7 @@ class Cache{
     bool is_present(double* adress);
     double get(double* adress);
     void set(double* adress);
-    void write(double* adress);
-    void set_unique(double* adress); // modification pontuelle après une écriture
+    void write(double* adress);      // modification pontuelle après une écriture
     void hit_ratio();
     void clear();
   private:

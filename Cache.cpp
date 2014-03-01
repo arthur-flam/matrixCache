@@ -107,16 +107,13 @@ void Cache::set(double* adress){
     int l = lineIndex(adress);
     lignes[l].load(adress);
 }
-void Cache::set_unique(double* adress){
-    int l = lineIndex(adress);
-    uintptr_t offset = lignes[l].get_offset(adress);
-    lignes[l].set_case(offset, *adress);
-}
 void Cache::write(double* adress){
     if(!is_present(adress)){
         set(adress);
     } else {
-        set_unique(adress);
+        int l = lineIndex(adress);
+        uintptr_t offset = lignes[l].get_offset(adress);
+        lignes[l].set_case(offset, *adress);
     }
 }
 

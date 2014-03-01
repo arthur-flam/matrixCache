@@ -30,13 +30,11 @@ public:
 
 
     // Test opérateurs
-//    Double& operator*(); // écriture
+    // Double& operator*(); // écriture
     DoubleRef operator*();
     //operator Double*(); // remplacé par la ligne suivant pour interecpter READ/WRITE
     operator Double*() const;
-    
-    //DoubleRef operator[](int);
-    
+        
 private:
     Double* P;
 };

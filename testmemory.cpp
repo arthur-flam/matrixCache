@@ -8,9 +8,6 @@
 
 #include "testmemory.h"
 
-
-
-
 int main(int argc, const char * argv[]){
     // Verbose level
     bool print_matrixes = false;

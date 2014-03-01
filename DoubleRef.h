@@ -21,8 +21,7 @@ class DoubleRef{
     friend class Matrix;
 public:
     DoubleRef(Double& r_):r(r_){}
-    static Cache cache; // I know global variables suck...
-                           // let's think of it as a state machine
+    static Cache cache; // Je sais c'est global..
 
     
     operator const DoublePtr();

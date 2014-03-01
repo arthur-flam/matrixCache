@@ -35,17 +35,15 @@ MatrixImpl::MatrixImpl( const MatrixImpl& other ){
     alloc();
     for(int i=0;i<SIZE;i++){
         for(int j=0;j<SIZE;j++){
-            (*this)(i,j) = other.tableau[i][j]; // pas parfait...
-            //tableau[i][j] = other.tableau[i][j];
+            (*this)(i,j) = other.tableau[i][j];
         }
     }
 };
 
 // Destructeur
 MatrixImpl::~MatrixImpl() {
-    // std::cout << "destruction" << std::endl;
     for (int i=0; i<SIZE; i++) {
-        //delete [] tableau[i]; // commenté lorsqu'on a introduit les DoublePtr
+        delete [] tableau[i];
     }
     delete [] tableau;
 }

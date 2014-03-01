@@ -19,8 +19,7 @@ CacheLine::CacheLine(){
 }
 // Destructeur: il faut libérer la mémoire allouée sur la pile
 CacheLine::~CacheLine(){
-    // TODO
-    //delete cases;
+    delete [] cases;
 }
 
 // Obtention du tag corespondant à une adresse
@@ -74,7 +73,7 @@ Cache::Cache(){
 }
 // Destructeur pour libérer la mémoire allouée sur la pile
 Cache::~Cache(){
-    // delete [] lignes;
+    //delete [] lignes;
     // j'ai du l'enlever à cause d'une erreur... je ne devrais pas pourtant !
 }
 

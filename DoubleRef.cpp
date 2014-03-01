@@ -23,8 +23,7 @@ DoubleRef::operator const DoublePtr(){
 Double DoubleRef::operator =(const Double& other){
     // std::cout << "WRITE" <<std::endl;
     this->r = other; // mémoire principale mise à jour
-    // [36] Cache + Ecriture
-    double* adress  = &(this->get_double_ref()); // adresse du double où l'on écrit
+    double* adress  = &(this->get_double_ref()); // [36] adresse du double où l'on écrit
     cache.write(adress); // cache mis à jour
     return this->r;
 }
@@ -44,6 +43,5 @@ double& DoubleRef::get_double_ref(){
 // Opérateur pour afficher sur un flux
 std::ostream& operator<<(std::ostream& stream, const DoubleRef D){
     //std::cout << "READ(print)";
-    //return stream << D.r;
     return stream << DoubleRef::cache.get(&(D.r.d));
 };

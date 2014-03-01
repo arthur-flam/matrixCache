@@ -21,29 +21,21 @@ DoubleRef::operator const DoublePtr(){
     return out;     
 }
 Double DoubleRef::operator =(const Double& other){
-    std::cout << "WRITE" <<std::endl;
+    //std::cout << "WRITE" <<std::endl;
     this->r = other;
     return this->r;
 }
 
-//Double& DoubleRef::get_ref() const{
-//    std::cout << "READ (get_ref)" <<std::endl;
-//    //const Double& out = Double(cache.get(&(r.d)));
-//    //return out;
-//    return r;
-//}
-
 DoubleRef::operator Double(){
-    std::cout << "READ (to Double)" <<std::endl;
-    double out = cache.get(&(r.d));
-    return out;// cache
+    //std::cout << "READ (to Double)" <<std::endl;
+    return cache.get(&(r.d));
     //return r; // sans cache
 }
 
 
 // Opérateur pour afficher sur un flux
 std::ostream& operator<<(std::ostream& stream, const DoubleRef D){
-    std::cout << "READ (print)" <<std::endl;
-    return stream << D.r;
-    //return stream << D.get_ref();
+    //std::cout << "READ(print)";
+    //return stream << D.r;
+    return stream << DoubleRef::cache.get(&(D.r.d));
 };

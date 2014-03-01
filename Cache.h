@@ -34,6 +34,7 @@
 
 
 class CacheLine{
+    friend class Cache;
   public:
     CacheLine();
     ~CacheLine();
@@ -47,7 +48,8 @@ class CacheLine{
     
   private:
     static const unsigned int w=4; // nombre de bits pour l'offset
-    int* cases; // contient les doubles mis en cache (#2^n)
+    static const unsigned int ww=16; // // 2^w
+    char* cases; // contient les doubles mis en cache (#2^n)
 };
 
 
@@ -61,7 +63,8 @@ class Cache{
     void hit_ratio();
   private:
     static const unsigned int n=5;
-    static const unsigned int w=4; // redite...
+    static const unsigned int nn=32; // 2^n
+
     CacheLine* lignes;
     unsigned long int miss=0, hit=0;
 };

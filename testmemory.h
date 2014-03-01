@@ -9,11 +9,6 @@
 #ifndef __projetInfo_AFMC__testmemory__
 #define __projetInfo_AFMC__testmemory__
 
-#include <iostream>
-#include "Cache.h"
-#include "Double.h"
-#include "DoublePtr.h"
-#include "DoubleRef.h"
 #include "matrix.h"
 
 

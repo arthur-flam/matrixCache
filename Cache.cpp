@@ -14,7 +14,7 @@
 
 // Contructeur
 CacheLine::CacheLine(){
-    cases = new int[2^w];
+    cases = new char[ww];
 }
 // Destructeur: il faut libérer la mémoire allouée sur la pile
 CacheLine::~CacheLine(){
@@ -25,12 +25,13 @@ CacheLine::~CacheLine(){
 // Obtention du tag corespondant à une adresse
 uintptr_t CacheLine::get_tag(double* adress){
     uintptr_t adress_64 = (uintptr_t) adress;
-    return adress_64 - adress_64 % 2^w;
+    //std::cout<< "tag: "<<(adress_64 - adress_64 % ww) << std::endl;
+    return adress_64 - adress_64 % ww;
 }
 // Obtention de l'offset
 uintptr_t CacheLine::get_offset(double* adress){
     uintptr_t adress_64 = (uintptr_t) adress;
-    uintptr_t offset = (uintptr_t) adress_64 % 2^w;
+    uintptr_t offset = (uintptr_t) adress_64 % ww;
     // on pourrait - soustraire le tag à l'adresse (autant l'utiliser)
     //             - utiliser une opération bitwise comme >>
     // je ne sais pas quelle approche est la plus rapide...
@@ -39,20 +40,16 @@ uintptr_t CacheLine::get_offset(double* adress){
 
 // Chargement en mémoire d'une ligne
 void CacheLine::load(double* adress){
-    int* start = (int*) get_tag(adress);
+    char* start = (char*) get_tag(adress);
     // soyons sûrs de remplir à partir du début d'une ligne
-    int nb = 2^w;
-    for(int i=0;i<nb;i++){
+    for(int i=0;i<ww;i++){
         cases[i] = *(start+i);
     }
-    // effectivement, on n'a pas de certitudes sur la mémoire avant l'adress
-    // 
-    tag = (uint64_t) start;
+    tag = (uintptr_t) start;
     valid=true;
 }
 double CacheLine::get_case(uintptr_t offset){
-    return *((double*) cases+offset); // on s'assure d'avoir le bon type...
-    // faudrait un template...
+    return *((double*) (cases+offset)); // on s'assure d'avoir le bon type...
 };
 
 
@@ -64,9 +61,8 @@ double CacheLine::get_case(uintptr_t offset){
 
 // Constructeur du cache
 Cache::Cache(){
-    lignes = new CacheLine[n];
-    int nb_l = 2^n;
-    for(int i=0;i<nb_l;i++)
+    lignes = new CacheLine[nn];
+    for(int i=0;i<nn;i++)
         lignes[i] = CacheLine();
 }
 // Destructeur pour libérer la mémoire allouée sur la pile
@@ -78,7 +74,7 @@ Cache::~Cache(){
 // Index de la ligne pour une adresse donnée
 int Cache::lineIndex(double* adress){
     uintptr_t adress_int = (uintptr_t) adress;
-    return (adress_int / 2^w) % 2^n ; // hachage
+    return (adress_int / CacheLine::ww) % nn ; // hachage
 }
 
 
@@ -86,19 +82,21 @@ int Cache::lineIndex(double* adress){
 // lecture
 double Cache::get(double* adress){
     int l = lineIndex(adress);
-    if(lignes[l].valid==0 || lignes[l].tag!=CacheLine::get_tag(adress)){
+    //std::cout<<"ligne: "<<l<<std::endl;
+    //std::cout<<"adress: "<<adress<<std::endl;
+    if(lignes[l].valid==false || lignes[l].tag!=CacheLine::get_tag(adress)){
         set(adress);
         miss+=1;
     } else {
         hit+=1;
     }
-    uintptr_t offset = lignes[l].get_offset(adress);
+    uintptr_t offset = lignes[l].get_offset(adress); // ???
     return lignes[l].get_case(offset);
 }
 // écriture
 void Cache::set(double* adress){
     int l = lineIndex(adress);
-    lignes[l].load(adress);
+    lignes[l].load(adress); // ????
 }
 
 // Obtention du hit ratio
@@ -111,12 +109,5 @@ void Cache::hit_ratio(){
     std::cout << "Ratio  : " << ratio << std::endl;
 }
 
-
-int mainGERSF(int argc, const char * argv[]){
-
-    
-    
-    return 0;
-};
 
 

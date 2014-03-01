@@ -14,7 +14,7 @@
 #include "DoublePtr.h"
 #include "DoubleRef.h"
 
-#define SIZE  2
+#define SIZE  100
 
 class MatrixImpl{
   public:
@@ -23,14 +23,13 @@ class MatrixImpl{
     MatrixImpl( const MatrixImpl& other ); // pour copier les données et non juste pointer desssus
     MatrixImpl& operator=( const MatrixImpl& other ); // idem
     
-    //Double operator()(int x, int y);
-    //Double &operator()(int x, int y);
-    DoubleRef operator()(int x, int y);
+    //Double operator()(int x, int y);  // accès à la r-value
+    //Double &operator()(int x, int y); // accès à la référence
+    DoubleRef operator()(int x, int y); // accès différentié read/write
     
     friend MatrixImpl operator*(MatrixImpl& A, MatrixImpl& B);
     void print();
 
-    
   private:
     //Double **tableau;
     DoublePtr *tableau;

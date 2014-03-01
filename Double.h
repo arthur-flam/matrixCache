@@ -11,6 +11,8 @@
 
 #include <iostream>
 
+class DoubleRef;
+
 class Double{
     friend class DoublePtr;
     friend class DoubleRef;
@@ -26,7 +28,9 @@ class Double{
     Double operator+( const Double& other );
     Double operator+=( const Double& other );
     friend std::ostream& operator<<(std::ostream&, const Double&);
+    friend std::ostream& operator<<(std::ostream&, const DoubleRef);
 
+    
   private:
     double d;
 };

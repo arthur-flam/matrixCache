@@ -26,7 +26,6 @@ public:
     
     operator const DoublePtr();
     Double operator =(const Double&);
-//    Double& get_ref() const;
     friend std::ostream& operator<<(std::ostream&, const DoubleRef);
     operator Double();
 

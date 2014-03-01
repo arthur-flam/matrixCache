@@ -12,13 +12,15 @@
 
 
 int main(int argc, const char * argv[]){
+    // Verbose
+    bool print_matrixes = false;
+    
+    // Tests
     bool test_cache=false;
     bool test_DoublePtrRef=false;
-    bool test_DoublePtrRefMatrices=true;
+    bool test_DoublePtrRefMatrices=false;
     bool test_mult=true;
-    // le cache ne récupère que le premier int...???
-    // 1. lui dire combien de cases on veut
-    // 2. les assembler
+    bool test_parcoursDoubleArray=false;
     
     
     Cache cache;
@@ -155,7 +157,6 @@ int main(int argc, const char * argv[]){
         //    std::cout << A(0,1) << std::endl;
         //    std::cout << A(1,1) << std::endl;
     }
-    
     if(test_mult){
         std::cout << "> Matrix A = Matrix();" << std::endl;
         Matrix A = Matrix();
@@ -172,14 +173,29 @@ int main(int argc, const char * argv[]){
         }
         std::cout << "> AB = A*B;" << std::endl;
         AB = A*B;
-        std::cout << "A:" << std::endl;
-        A.print();
-        std::cout << "B:" << std::endl;
-        B.print();
-        std::cout << "A*B:" << std::endl;
-        AB.print();
+        
+        if(print_matrixes){
+            std::cout << "A:" << std::endl;
+            A.print();
+            std::cout << "B:" << std::endl;
+            B.print();
+            std::cout << "A*B:" << std::endl;
+            AB.print();
+        }
+        DoubleRef::cache.hit_ratio();
     }
-
+    if(test_parcoursDoubleArray){
+        std::cout << "[Q37] Parcours d'un tableau de Double" << std::endl;
+        DoublePtr p = new Double[100];
+        for(int i=0;i<100;++i)
+            std::cout << *(p+i) << std::endl;
+        //delete [] p;
+        DoubleRef::cache.hit_ratio();
+        // Le hit ration est très mauvais
+        // c'est surprenant. Visiblement la mémoire est allouée avec de gros trous
+        // pourtant la taille d'un double est 8...
+        
+    }
     
     return 0;
 };

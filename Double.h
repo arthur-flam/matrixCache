@@ -11,8 +11,9 @@
 
 #include <iostream>
 
-
 class Double{
+    friend class DoublePtr;
+    friend class DoubleRef;
   public:
     // Constructeurs et méthodes spéciales
     Double();
@@ -25,7 +26,7 @@ class Double{
     Double operator+( const Double& other );
     Double operator+=( const Double& other );
     friend std::ostream& operator<<(std::ostream&, const Double&);
-    
+
   private:
     double d;
 };

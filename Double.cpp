@@ -54,8 +54,7 @@ std::ostream& operator<<(std::ostream& stream, const Double& D){
 
 
 // Conversion en Double
-//Double::operator double(){
-//    //std::cout << "conversion to double" << std::endl;
+//double* Double::to_doublept(){
 //    return this->d;
 //};
 

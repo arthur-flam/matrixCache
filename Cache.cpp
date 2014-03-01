@@ -51,7 +51,8 @@ void CacheLine::load(double* adress){
     valid=true;
 }
 double CacheLine::get_case(uintptr_t offset){
-    return cases[offset];
+    return *((double*) cases+offset); // on s'assure d'avoir le bon type...
+    // faudrait un template...
 };
 
 
@@ -70,7 +71,8 @@ Cache::Cache(){
 }
 // Destructeur pour libérer la mémoire allouée sur la pile
 Cache::~Cache(){
-    delete [] lignes;
+    // delete [] lignes;
+    // j'ai du l'enlever à cause d'une erreur... je ne devrais pas pourtant !
 }
 
 // Index de la ligne pour une adresse donnée
@@ -111,23 +113,6 @@ void Cache::hit_ratio(){
 
 
 int mainGERSF(int argc, const char * argv[]){
-    std::cout << "Test du cache" << std::endl;
-    double a = 5.;
-    double* pa = &a;
-    
-    std::cout << a << std::endl;
-    std::cout << "adress : " << pa << std::endl;
-    std::cout << "tag    : " << (double*) CacheLine::get_tag(pa) << std::endl;
-    std::cout << "offset : " << CacheLine::get_offset(pa) << std::endl;
-    
-    Cache cache;
-    cache.get(pa);
-    cache.get(pa);
-    cache.get(pa);
-    cache.get(pa);
-    
-    cache.hit_ratio();
-    //std::cout << r << std::endl;
 
     
     

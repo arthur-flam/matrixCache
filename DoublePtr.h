@@ -9,13 +9,14 @@
 #ifndef __projetInfo_AFMC__DoublePtr___
 #define __projetInfo_AFMC__DoublePtr___
 
-#include <iostream>
 #include "Double.h"
 #include "DoubleRef.h"
 
 class DoubleRef;
 
 class DoublePtr{
+    friend class Double;
+    friend class DoubleRef;
 public:
     DoublePtr();
     DoublePtr(Double* p);
@@ -31,7 +32,7 @@ public:
     // Test opérateurs
 //    Double& operator*(); // écriture
     DoubleRef operator*();
-    //operator Double*();
+    //operator Double*(); // remplacé par la ligne suivant pour interecpter READ/WRITE
     operator Double*() const;
     
     //DoubleRef operator[](int);

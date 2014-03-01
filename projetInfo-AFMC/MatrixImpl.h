@@ -12,6 +12,7 @@
 #include <iostream>
 #include "Double.h"
 #include "DoublePtr.h"
+#include "DoubleRef.h"
 
 #define SIZE  2
 

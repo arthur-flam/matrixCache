@@ -87,6 +87,8 @@ MatrixImpl operator*(MatrixImpl& A, MatrixImpl& B){
         for(int j=0;j<SIZE;j++){
             for(int k=0;k<SIZE;k++){
                 //result.tableau[i][j] = result.tableau[i][j] + A.tableau[i][k] * B.tableau[k][j];
+                std::cout<< A(i,k) << ".." << B(k,j) <<std::endl;
+                std::cout<< Double(A(i,k)) << "--" << Double(B(k,j)) <<std::endl;
                 result(i,j) = Double(result(i,j)) + Double(A(i,k)) * Double(B(k,j));
             }
         }

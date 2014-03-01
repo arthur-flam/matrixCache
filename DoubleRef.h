@@ -21,7 +21,7 @@ class DoubleRef{
     friend class Matrix;
 public:
     DoubleRef(Double& r_):r(r_){}
-    static Cache cache; // Je sais c'est global..
+    static Cache* cache; // Je sais c'est global..
 
     
     operator const DoublePtr();

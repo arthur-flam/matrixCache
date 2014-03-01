@@ -16,12 +16,12 @@ int main(int argc, const char * argv[]){
     bool test_cache=false;
     bool test_DoublePtrRef=false;
     bool test_DoublePtrRefMatrices=false;
-    bool test_multiplication=true;
+    bool test_multiplication=false;
     bool test_parcoursTableauDouble=false;
     
 
     Cache cache;
-    DoubleRef::cache=cache;
+    DoubleRef::cache=&cache;
     
     
     // TESTS
@@ -155,7 +155,7 @@ int main(int argc, const char * argv[]){
         //    std::cout << A(1,1) << std::endl;
     }
     if(test_multiplication){
-        DoubleRef::cache.clear();
+        DoubleRef::cache->clear();
         std::cout << "> Matrix A = Matrix();" << std::endl;
         Matrix A = Matrix();
         std::cout << "> Matrix B = Matrix();" << std::endl;
@@ -180,14 +180,14 @@ int main(int argc, const char * argv[]){
             std::cout << "A*B:" << std::endl;
             AB.print();
         }
-        DoubleRef::cache.hit_ratio();
+        DoubleRef::cache->hit_ratio();
         //-> 46% vanilla
         //-> 50% avec le write-through
     }
     if(test_parcoursTableauDouble){
         // [Q35]
         std::cout << "[Q35] Parcours d'un tableau de Double" << std::endl;
-        DoubleRef::cache.clear();
+        DoubleRef::cache->clear();
         // TABLEAU
         std::cout << "> DoublePtr p = new Double[SIZE];" << std::endl;
         DoublePtr p = new Double[SIZE];
@@ -197,15 +197,15 @@ int main(int argc, const char * argv[]){
         }
         
         
-        DoubleRef::cache.hit_ratio(); // -> 1 hit !!!
+        DoubleRef::cache->hit_ratio(); // -> 1 hit !!!
         // Le hit ration est très mauvais
         // c'est surprenant ? Visiblement la mémoire est allouée avec de gros trous (?!?)
 
         // MATRICE
-        DoubleRef::cache.clear();
+        DoubleRef::cache->clear();
         Matrix A = Matrix();
         A.print();
-        DoubleRef::cache.hit_ratio(); // -> 50%
+        DoubleRef::cache->hit_ratio(); // -> 50%
         // le hit ratio est meilleur avec des matrices
     }
     

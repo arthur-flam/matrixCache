@@ -73,8 +73,7 @@ Cache::Cache(){
 }
 // Destructeur pour libérer la mémoire allouée sur la pile
 Cache::~Cache(){
-    //delete [] lignes;
-    // j'ai du l'enlever à cause d'une erreur... je ne devrais pas pourtant !
+    //le contenu des lignes est déjà libéré ??
 }
 
 // Index de la ligne pour une adresse donnée

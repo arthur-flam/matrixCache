@@ -28,9 +28,14 @@ Double DoubleRef::operator =(const Double& other){
 
 DoubleRef::operator Double(){
     //std::cout << "READ (to Double)" <<std::endl;
-    return cache.get(&(r.d));
+    return DoubleRef::cache.get(&(r.d));
     //return r; // sans cache
 }
+
+// Utile pour cacher les détails d'implémentations à la classe Matrix
+double& DoubleRef::get_double_ref(){
+    return r.d;
+};
 
 
 // Opérateur pour afficher sur un flux

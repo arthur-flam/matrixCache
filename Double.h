@@ -16,6 +16,7 @@ class DoubleRef;
 class Double{
     friend class DoublePtr;
     friend class DoubleRef;
+    friend class Matrix; // pour cacher les détails d'implé
   public:
     // Constructeurs et méthodes spéciales
     Double();

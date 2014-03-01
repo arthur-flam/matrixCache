@@ -41,13 +41,8 @@ Matrix operator*(Matrix& A, Matrix& B){
 // [11] chez moi cela compile sans plus de travail
 
 
-DoubleRef Matrix::operator()(int i, int j){
-    //double d =(double) this->M(i,j);
-    //double& rd = d;
-//    Double& d = this->M(i,j);
-//    double& rd = d;
-//    return rd;
-    return this->M(i,j);
+double& Matrix::operator()(int i, int j){
+    return (this->M(i,j)).get_double_ref();
 };
 // [22] Pour le moment on doit utiliser Double ici pour que ça marche
 // En effet, pour le moment M contient des Doubles, qu'on ne sait pas convertir en double

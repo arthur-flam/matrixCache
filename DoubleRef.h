@@ -18,6 +18,7 @@ class DoublePtr;
 class DoubleRef{
     friend class Double;
     friend class DoublePtr;
+    friend class Matrix;
 public:
     DoubleRef(Double& r_):r(r_){}
     static Cache cache; // I know global variables suck...
@@ -28,6 +29,7 @@ public:
     Double operator =(const Double&);
     friend std::ostream& operator<<(std::ostream&, const DoubleRef);
     operator Double();
+    double& get_double_ref();
 
 private:
     Double& r;

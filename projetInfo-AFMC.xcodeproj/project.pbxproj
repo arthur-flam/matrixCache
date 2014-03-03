@@ -34,6 +34,7 @@
 /* Begin PBXFileReference section */
 		160D44E918AF6FFC00857B59 /* DoubleRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoubleRef.cpp; sourceTree = "<group>"; };
 		160D44EA18AF6FFC00857B59 /* DoubleRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleRef.h; sourceTree = "<group>"; };
+		1611409118C47D880041D8A4 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		16B3BB7718A2ABC5007FB8B6 /* projetInfo-AFMC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "projetInfo-AFMC"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16B3BB7C18A2ABC5007FB8B6 /* projetInfo_AFMC.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = projetInfo_AFMC.1; sourceTree = "<group>"; };
 		16B3BB8318A2ABF7007FB8B6 /* MatrixImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatrixImpl.cpp; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		16B3BB6E18A2ABC5007FB8B6 = {
 			isa = PBXGroup;
 			children = (
+				1611409118C47D880041D8A4 /* README */,
 				16B3BBD018A2F686007FB8B6 /* TestMemory */,
 				16B3BB9118A2F1B4007FB8B6 /* Memory */,
 				16B3BB8D18A2EDB4007FB8B6 /* TestMatrices */,

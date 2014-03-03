@@ -5,7 +5,8 @@ Arthur Flam - Mathieu Carrière
 
 
 ### Notes ###
-Quelques informations complémentaires:
+Quelques informations sur le projet:
+- Le projet est idéalement à ouvrir avec XCode. Pas de cmake pour aujourd'hui désolé ;)
 - Travaillant l'un sur Mac et l'autre sous Windows, nous n'avons pas utlisé de librairies dynamiques. Nous nous sommes bornés à constater qu'il est possible de le faire facilement chacun sur sa plateforme
-- Nous nous sommes arrêtés aux questions avancées
+- Nous nous sommes arrêtés aux questions avancées.
 - C'est parfois bien compliqué... Mais au moins on peut maintenant dire qu'on sait faire un peu de C++.

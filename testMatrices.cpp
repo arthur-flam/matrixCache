@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 AFlam. All rights reserved.
 //
 
-#include "main.h"
+#include "testMatrices.h"
 
 int mainXX(int argc, const char * argv[]){
     std::cout << "> Matrix A = Matrix();" << std::endl;
